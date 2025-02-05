@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
+      rel="stylesheet"/>
+    <title>Prototype</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+           justify-content: center;
+           background: linear-gradient(to top left, #28b487, #7dd56f);
+        }
+        .header{
+            color: #FFFFFF;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+        <h1 class="header">Object Oriented Programming(OOP) with Javascript</h1>
+    </header>
+  </body>
+  <script>
+    let Person = function(Name, BirthYear){
+        this.Name = Name;
+        this.BirthYear = BirthYear;
+    }
+    let jonas = new Person('jonas',27);
+    console.log(jonas);
+
+    let moka = new Person('Moka', 30);
+    console.log(moka);
+    // console.log(Person.prototype)
+  </script>
+</html>

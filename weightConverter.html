@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeightConverter</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container{
+            background-color: white;
+            border-radius: 8px;
+            width: 400px;
+            text-align: center;
+        }
+        .header{
+            background-color: purple;
+            color: white;
+            border-radius: 8px 8px 0 0;
+            font-size: 20px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        label{
+            display: block;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        input{
+            width: 70%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 3px;
+            text-align: center;
+        }
+        .output{
+            margin-top: 10px;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .button{
+            width: 200px;
+            height: 40px;
+            margin-top: 10px;
+            background-color: purple;
+            color: white;
+            font-size: 20px;
+            letter-spacing: 1px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+                Weight Converter
+            </h1>
+        </div>
+        <div class="input">
+            <label for="input" id="input-label">Weight in KG</label>
+            <input type="text" id="input" placeholder="Enter your weight">
+        </div>
+        <button class="button">Convert</button>
+        <div class="output">
+            <p>Your Weight in pounds <span id="weightOutput">0</span></p>
+        </div>
+    </div>
+</body>
+<script>
+    let input = document.querySelector('#input');
+    let output = document.querySelector('#weightOutput');
+    let btn = document.querySelector('.button');
+
+    btn.addEventListener("click", ()=>{
+        let val = input.value;
+        let out = val*2.2;
+        output.innerHTML = out.toFixed(2);  
+    });
+</script>
+</html>

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Your Local Time</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <script>
+
+    // for loop
+
+
+    //         for (let rep = 2 ;
+    //             rep <= 10;
+    //             rep = rep + 2){
+    //     console.log(`hello ${rep}`)
+    // }
+
+    // let years = [1991, 1995, 2000 , 2005];
+    // let ages = [];
+
+    //     for (let i = 0; i < years.length; i++ ) {
+    //         ages.push(2037 - years[i]);
+
+    //     }
+    //     console.log(ages)
+
+
+    // continue & break 
+
+    // let jonas = ['jonas',
+    //             'schmedtmann',
+    //             'micheal',
+    //             46,
+    //             true ];
+
+    //         for (i = 0; i < jonas.length; i++){
+    //         if(typeof jonas[i] !== 'String') continue;
+    //         console.log(jonas[i]);
+    //     }
+
+
+
+    // interviw questions
+
+    //Q1
+    // let a = [30,70]
+    // let b = [90,30]
+    // console.log(a[0]==b[1]);
+    // console.log(a[0]===b[1]);
+
+    //Q2
+
+    // let a = 9;
+    // let b = a++;
+    // let c = a++ + b++;
+    // console.log(a,b,c);
+
+    // Q3
+
+    // var a = [1,2,'3',4];
+    // sum = 0;
+    // a.forEach(function(e){
+    //     if(typeof e === "number"){
+    //         sum = sum + e;
+    //     }
+    // })
+    // console.log(sum)
+
+    //Q4 
+
+    // function joiner(val){
+    //     return val.join("+");
+    // }
+    // console.log(joiner(["apple","mango","orange","cat"]));
+
+    // Q5
+
+    // how many ways to create object in JS?
+
+    //  first way 
+
+    // var a = {}; console.log(a)// object literals
+
+    // // second way 
+
+    // var ans = Object.create(null); console.log(ans)//by using object create method
+
+    // // third way using function
+
+    // function abcd(){
+    //     this.name = 'sam';
+    // }
+    // var obj = new abcd()
+
+    // console.log(obj);
+
+    // // forth way  using constructor function
+
+    // class Abcd {
+    //     constructor(){}
+    //         a = 12;
+    //     }
+    //     var ans = new Abcd();
+    //     console.log(ans);
+
+    // Q6 
+    // what is high order function ? 
+    // ans. jis function ke ander function aa raha hai use high order function kehte hai . 
+
+    // let arr = [2, 3, 4];
+    // sum = 0;
+    // arr.forEach(function(val){
+    //   sum += val * 1;
+    // })  
+    // console.log(sum);
+
+    // let arr1 = arr.map(function(val){
+    //   return val * 2;
+    // });
+    // console.log(arr1); 
+
+    // let arr2 = [1, 2, 3, 4, 5, 6];
+    //  let arr3 = arr2.filter(function(f){
+    //     return f > 3;
+    //   })
+    //   console.log(arr3); 
+
+    // Q7 how to make closure in js 
+
+    // A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+
+    // function abcd(){
+    //   let name = 'ram';
+    //   function displayName(){
+    //     console.log(name);
+    //   }
+    //   return displayName;
+    // }
+    // let myAbcd = abcd();
+    // myAbcd();
+
+    // Q8 how to make a object immutable so that we can't change add or delete value from it. 
+
+    // let obj = {
+    //   name : "sham",
+    //   age : 25
+    // };
+    // Object.freeze(obj);
+    // obj.name = "ram"
+    // console.log(obj);
+
+    // Q9 how to make all unique values in a js array
+
+    // let arr1 = [1,2,3,4,5,1,2,3,1,2,3,4,1,3];
+    // let arr2 = [...new Set(arr1)];
+    // console.log(arr2);
+
+    // Q10 what is lambda function in JS ? 
+
+    // lambda function is basicaly a fat arrow function . 
+
+    // () => {
+    // }
+
+    // Q11 given a string , reverse of each world in sentence ?
+
+    //  let str = "sare jahan se acha hindustaan hamara";
+    // let str2 = str.split(" ").map(function(word){
+    //    return word.split("").reverse().join("");
+    //  })
+
+    // Q12 how to check if an object is an array or not ? 
+
+    // function arr(elem){
+    //   return Array.isArray(elem);
+    // }
+
+    // console.log(arr([]))
+    // console.log(arr({}))
+
+    // Q13 how would to check the number is integer or not without using interger() ? 
+
+    // let a = 12;
+    // if(a%1 === 0){
+    //   console.log("integer")
+    // }else{
+    //   console.log("not integer");
+    // }
+
+    // Q14 Make this work : duplicate ([1, 2, 3, 4, 5]) output is [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+
+    // function duplicate(arr){
+    //   return arr.concat(arr);
+    // }
+
+    // console.log(duplicate([1, 2, 3, 4, 5]));
+
+    // Q15 write a javascript function that reverse a number ?
+
+    // function reverseKaro(num){
+    // return num.toString().split('').reverse().join('')
+    // }
+    // console.log(reverseKaro(12))
+
+    // Q16 Write a javascript function that accepts a string as a parameter and converts the frist letter of each word of the string is upper case. 
+
+    // harsh bhai kaise ho
+
+    // function capitalize(str){
+    //   let allWords = str.split(" ").map(function(word){
+    //     return word.charAt(0).toUpperCase() + word.substring(1);
+    //   })
+    //   console.log(allWords.join(' '));
+    // }
+    // capitalize("harsh bhai kaise ho");
+
+    // let massMark = 78;
+    // let massJohn = 92;
+    // let heightMark = 1.69;
+    // let heightJohn = 1.95;
+
+    // let BMIMark = massMark / heightMark ** 2;
+    // let BMIJohn = massJohn / (heightJohn * heightJohn);
+
+    // console.log(BMIMark);
+    // console.log(BMIJohn);
+
+    // function cutPiece(fruit){
+    //   return fruit * 4;
+    // }
+
+    // function fruitProcessor(apple, orange) {
+    //   let appleFruit = cutPiece(apple);
+    //   let orangeFruit = cutPiece(orange);
+
+    //   let juice = ` juice with ${appleFruit} piece of apple and ${orangeFruit} piece of apple`;
+    //   return juice;
+    // }
+    //   console.log(fruitProcessor(2, 3));
+
+    //Write function called 'describeCountry' which takes three parameters: 'country', 'population' and 'capitalCity'. Based on this input, the function returns a string with this format: 'Finland has 6 million people and its capital city is Helsinki'
+    
+    //Call this function 3 times,with input data for 3 different countries.Store the returned values in 3 different variables, and log them to the console
+
+   
+
+    // function describeCountry(country, population, capitalCity){
+    //   let world = `${country} has ${population} million people and its capital city is ${capitalCity}`;
+    //   return world;
+    // }
+    // console.log(describeCountry('Finland', 6 , 'Helsinki'));
+    // console.log(describeCountry('india', 140 , 'Delhi'));
+    // console.log(describeCountry('Bangladesh', 20 , 'Dhaka'));
+
+    // // function declaration 
+    // function percentageOfWorld1(population){
+    //   return (population / 7900) * 100;
+    // }
+    // // function expression
+    // let percentageOfWorld2 = function (population){
+    //   return (population / 7900) * 100;
+    // }
+
+    // let describePopulation1 = percentageOfWorld1(1441);
+
+    // console.log(describePopulation1);
+
+    // Q. how to convert arrow function to normal function ?
+
+    // arrow function 
+
+    // let yearsUntilRetirement = (birthYear, firstName) => {
+    //   let age = 2037 - birthYear;
+    //   let retirement = 65 - age;
+    //   return `${firstName} retires in ${retirement} years`;
+    // }
+    // console.log(yearsUntilRetirement(1991, 'jonas'));
+
+    // // normal function 
+    // function yearsUntilRetirement(birthYear, firstName) {
+    //   let age = 2037 - birthYear;
+    //   let retirement = 65 - age;
+    //   return `${firstName} retires in ${retirement} years`;
+    // }
+    // console.log(yearsUntilRetirement(1991, 'jonas'));
+
+    // let calAvg = function(a, b, c){
+    //   return (a + b + c) / 3;
+    // }
+    //  let avgDolphin = calAvg(44, 23, 71);
+    //  let avgKoalas = calAvg(65, 54, 49);
+    //  console.log(avgDolphin);
+    //  console.log(avgKoalas);
+
+    //  function checkWinner(avgDolphins, avgKoalas){
+    //     if(avgDolphin >= 2 * avgKoalas){
+    //       console.log(`Dolphin wins the trophie (${avgDolphin} vs ${avgKoalas})`);
+    //     }
+    //     else if(avgKoalas >= 2 * avgDolphin){
+    //       console.log(`Koalas wins the trophie (${avgDolphin} vs ${avgKoalas})`);
+    //     }
+    //     else{
+    //       console.log(`No team wins`);
+    //     }
+    //  }
+    //  checkWinner(avgDolphin, avgKoalas);
+
+    //  Q.   LECTURE: Basic Array Operations (Methods)
+    // 1. Create an array containing all the neighbouring countries of a country of your choice. Choose a country which has at least 2 or 3 neighbours. Store the array into a variable called 'neighbours'
+    // 2. At some point,a new country called 'Utopia' is created in the neighbourhood of your selected country. So add it to the end of the 'neighbours' array
+    // 3. Unfortunately, after sometime,the new country is dissolved.So remove it from the end of the array
+    // 4. If the'neighbours' array does not include the country‘Germany’,log to the console: 'Probably not a central European country :D'
+    // 5. Change the name of one of your neighbouring countries.To do that,find the index of the country in the 'neighbours' array, and then  use that index to change the array at that index position. For example, you can search for 'Sweden' in the array, and then replace it with 'Republic of Sweden'.
+
+    // let neighbours = ['Norway', 'Sweden', 'Russia']; 
+
+    // neighbours.push("Utopia");
+    // console.log(neighbours);
+
+    // neighbours.pop();
+    // console.log(neighbours);
+
+    // neighbours.includes('Germany');
+    // console.log('Probably not a central European country :D');
+
+    // neighbours[neighbours.indexOf('Sweden')] = 'Republic of Sweden'
+    // console.log(neighbours);
+
+    // Q. Create an object called 'myCountry' for a country of your choice, containing properties 'country', 'capital', 'language', 'population' and 'neighbours' (an array like we used in previous assignments).
+
+    // 1. Using the object from the previous assignment,log a string like this to the console: 'Finland has 6 million finnish-speaking people, 3 neighbouring countries and a capital called Helsinki.'
+    
+    // 2. Increase the country's population by two million using dot notation,and then decrease it by two million using brackets notation.
+
+    // let myCountry = {
+    //   country : 'England',
+    //   capital : 'Londan',
+    //   language : 'English',
+    //   population : 6,
+    //   neighbours : ['Scotland', 'wales'] 
+    // };
+
+    // console.log(`${myCountry.country} has ${myCountry.population} million, ${myCountry.language}-speaking people, ${myCountry.neighbours.length} ountries and a capital called ${myCountry.capital}`);
+
+    // const populations = [10, 1441, 332, 83];
+    // let percentage = [];
+
+    // for (let i = 0 ; i < populations.length;  i++){
+    //   let perc = percentageOfWorld1(populations[i]);
+    //   percentage.push(perc);
+    // }
+    // console.log(percentage);
+
+    // let score = 50;
+    // let result = score >= 60 ? 'student pass' : "student fail";
+    // console.log(result);
+
+    // console.log("5" - 3);
+    // // 2
+    // console.log(2 < 12 < 5);
+    // // false 
+    // console.log("20" + 10 + 10);
+    // // 2020
+    
+    // let age = 20;
+    // let isCitizen = true;
+    // let isRegistration = false;
+    // if(age >= 18){
+    //   if(isCitizen){
+    //   if(isRegistration){
+    //     console.log("they are eligible to vote");
+    // }else{
+    //   console.log("they are not eligible to vote due to registration");
+    //   }
+    // }
+    // }else{
+    //   console.log("they are not eligible to vote");
+    // }
+
+// Q write a program to find a even or odd number ?
+    // let num = 4;
+    // if (num % 2 === 0){
+    //   console.log("num is even");
+    // }else{
+    //   console.log("num is odd");
+    // }
+
+    // let num = 1;
+    // while(num <=10){
+    //   console.log(`5 * ${num} = ${5 * num}`);
+    //   num++;
+    // }
+
+    //Q write a program to print a table for a given number (8,9,12,15)?
+
+    // let i = 1;
+    //   for(i=1; i<= 10; i++){
+    //     console.log(`8 * ${i} = ${8*i}`);
+    //   }
+
+    //   for(i=1; i<= 10; i++){
+    //     console.log(`9 * ${i} = ${9*i}`);
+    //   }
+
+    //   for(i=1; i<= 10; i++){
+    //     console.log(`12 * ${i} = ${12*i}`);
+    //   }
+
+    //   for(i=1; i<= 10; i++){
+    //     console.log(`15 * ${i} = ${15*i}`);
+    //   }
+
+    // Q how to make a star pattern 
+
+  //   var i = 1;
+  //   for(let i=1; i<=5; i++){
+  //     let pattern = "";
+  //     for(let j=1; j<=i; j++){
+  //       pattern = pattern + " *"
+  //     }
+  //     console.log(pattern);
+  //   }
+
+  //   //Q how to make a christmas star pattern 
+
+  //   for(var i=0; i<=5; i++){
+  //   var star = '';
+  //   //Changed to start high then decrease
+  //   for(var k = 1; k <= 5 - i; k++){
+  //     //shortened to one space
+  //     star += " ";
+  //   };
+  //   for(var j=0; j<=i; j++) {
+  //       //Added space so there is an odd number
+  //       //of symbols and the star above fits
+  //       //the space
+  //       star += " *";
+  //   };
+  //   //Moved into the loop
+  //   console.log(star);
+  // };
+
+  // let sum = function(a,b){
+  //   return a+b;
+  // }
+  // console.log(sum(10,5));
+  
+  // Q add dec at the end of array 
+
+  // let months = ["jan", "march", "may", "july", "aug", "oct"];
+  // // months.push("dec");
+  // // console.log(months);
+
+  // // another method 
+  // months.splice(months.length, 0 ,"dec");
+  // console.log(months);
+
+    // let scoreDolphin = (93 + 108 + 89) / 3;
+    // let scorekoalas = (93 + 108 + 89) / 3;
+
+    // console.log(scorekoalas , scoreDolphin)
+
+    // let x = 3;
+    // let y = x++;
+
+    // console.log(`x:${x}, y:${y}`);
+
+    // let bill = 275;
+    // let tip = bill <= 300 && bill >= 50 ? bill * .15 : bill * .20;
+    // console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
+
+    // Q Given a object representing a student, write a function to add a new subject with its corresponding grade to a student's
+    // record. also check if the grade properties present or not
+
+    // let student = {
+    //   name: "Bob",
+    //   age : "20",
+    //   grades: {
+    //     math: 90,
+    //     science: 85,
+    //     history: 88
+    //   },
+    // };
+ 
+    // // addSubjectGrade(student, "computer", 92);
+    // console.log(student);
+
+    // solution
+
+    // function addSubjectGrade(student, subject , marks){
+    //   if(!student.grades){
+    //     student.grades = {};
+    //   }
+    //   return(student.grades[subject] = marks);
+    // }
+    //  addSubjectGrade(student, "computer", 92);
+    //  addSubjectGrade(student, "english", 80);
+    //  console.log(student);
+
+
+    //  let target = { a:1, b:2};
+    //  let source = {b:3 , c:4};
+    //  let mergedObject = Object.assign({},target,source);
+    //  console.log(mergedObject);
+
+    let number = [10, 20, 30, 40];
+    // let ans = number.map(function(val){
+    //     return val / 2;
+    //     });
+    //     console.log(ans);
+
+    let ans = number.map((val)=>
+       val / 2
+    );
+    console.log(ans);
+
+    let ans1 = number.filter((val) => val < 30);
+    console.log(ans1);
+
+  </script>
+</body>
+
+</html>

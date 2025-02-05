@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: linear-gradient(
+                to right top,
+                #051973,
+                #004d7a,
+                #008793,
+                #00bf72,
+                #a8eb12
+            );
+        }
+        #myButton{
+            width: 150px;
+            height: 50px;
+            border-radius: 30px;
+            background-color: navy;
+            color: white;
+            font-size: 20px;
+            letter-spacing: 1px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        #myButton2{
+            width: 150px;
+            height: 50px;
+            border-radius: 30px;
+            background-color: orange;
+            color: black;
+            font-size: 20px;
+            letter-spacing: 1px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        .heading{
+            margin-top: 30px;
+            text-align: center;
+            color: white;
+        }
+        .copyCode{
+            margin-top: 30px;
+            width: 350px;
+            line-height: 30px;
+            font-size: large;
+            box-shadow: 1px 1px 5px 5px white;
+            padding: 10px;
+            cursor: pointer;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <section>
+    <div>
+        <button id="myButton">#051937</button>
+        <button id="myButton2">#008793</button>
+    </div>
+    <h2 class="heading">Copy your code here.</h2>
+        <div class="copyCode">
+            background-image: linear-gradiant(to right, rgb(92, 145, 229), rgb(152, 63, 198))
+        </div>
+    </section>
+</body>
+<script>
+    let btn1 = document.querySelector("#myButton");
+    let btn2 = document.querySelector("#myButton2");
+    let divCopy =  document.querySelector(".copyCode");
+    let rgb1 = "#004773";
+    let rgb2 = "#54d542";
+// create a hex value 
+    let hexValue = () => {
+        let hexValues = "0123456789abcdef";
+        let colors = "#"
+        for(i = 0; i < 6; i++){
+            // console.log();
+             colors = colors + hexValues[Math.floor(Math.random()*16)]; 
+        }
+        return colors;
+    } 
+
+    let handlerButton1 = function(){
+         rgb1 = hexValue();
+        console.log(rgb1);
+        btn1.innerHTML = rgb1;
+        document.body.style.backgroundImage = `linear-gradient(to right, ${rgb1}, ${rgb2})`;
+        divCopy.innerHTML = ` background-image: linear-gradient(to right, ${rgb1}, ${rgb2})`;
+    }
+
+    let handlerButton2 = function(){
+         rgb2 = hexValue();
+        console.log(rgb2);
+        btn2.innerHTML = rgb2;
+         document.body.style.backgroundImage = `linear-gradient(to right, ${rgb1}, ${rgb2})`;
+        divCopy.innerHTML = ` background-image: linear-gradient(to right, ${rgb1}, ${rgb2})`;
+    }
+
+    divCopy.addEventListener("click", () => {
+        navigator.clipboard.writeText(divCopy.innerText);
+        alert("Copied the text: " + divCopy.innerText);
+    });
+
+    btn1.addEventListener("click" , handlerButton1);
+    btn2.addEventListener("click" , handlerButton2);
+
+</script>
+</html>

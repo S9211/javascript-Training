@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #010101;
+            color: #171717;
+        }
+        .container{
+            background-color: #fff;
+            color: #171717;
+            padding: 32px;
+            width: 40%;
+            margin: 64px auto;
+        }
+        .weather__header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        input{
+            border: none;
+            background: #1e1e1e;
+            color: #fff;
+            outline: none;
+            font-size: 15px;
+            padding: 8px 40px;
+            border-radius: 5px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        input::placeholder{
+            color: #f7f7f7;
+        }
+        .wheather__search{
+            position: relative;
+        }
+        .wheather__search i{
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            font-size: 15px;
+            color: #f7f7f7;
+        }
+
+
+
+        .weather__units {
+        font-size: 1.5rem;
+        }
+
+        .weather__units span {
+        cursor: pointer;
+        }
+
+        .weather__units span:first-child {
+        margin-right: 8px;
+        }
+
+        .weather__body {
+        text-align: center;
+        margin-top: 14px;
+        }
+
+        .weather__date_time {
+        margin-bottom: 32px;
+        font-size: 14px;
+        }
+
+        .weather__forecast {
+        background: #1e1e1e;
+        /* background-color: #f7f7f7; */
+        color: #fff;
+        /* color: #171717; */
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 30px;
+        }
+
+        .weather__icon img {
+        width: 100px;
+        filter: drop-shadow(2px 4px 6px black);
+        -webkit-filter: drop-shadow(2px 4px 6px black);
+        }
+
+        .weather__temp {
+        font-size: 30px;
+        }
+
+        .weather__minmax {
+        display: flex;
+        justify-content: center;
+        }
+
+        .weather__minmax p {
+        font-size: 14px;
+        margin: 8px;
+        }
+
+        .weather__info {
+        display: flex;
+        gap: 16px;
+        margin-top: 48px;
+        }
+
+        .weather__card {
+        display: flex;
+        align-items: center;
+        background: #1e1e1e;
+        background-color: #f7f7f7;
+        color: #000;
+        padding: 16px;
+        border-radius: 10px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        .weather__card i {
+        font-size: 24px;
+        margin-right: 16px;
+        }
+
+        .weather__card p {
+        font-size: 14px;
+        }
+
+        @media (max-width: 936px) {
+        .container {
+            width: 90%;
+        }
+
+        .weather__header {
+            flex-direction: column;
+        }
+
+        .weather__units {
+            margin-top: 24px;
+        }
+        }
+
+        @media (max-width: 400px) {
+        .weather__info {
+            grid-template-columns: none;
+        }
+        }
+        
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="weather__header">
+            <form class="wheather__search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" class="cityName" placeholder="search your city..."> 
+            </form>
+        </div>
+
+        <!-- weather body -->
+
+         <div class="weather__body">
+            <h1 class="weather__city"></h1>
+            <p class="weather__date_time"></p>
+            <div class="weather__data">
+                <p class="weather__forecast"></p>
+                <div class="weather__icon"></div>
+                <p class="weather__temp"></p>
+                <div class="weather__minmax">
+                    <p class="weather__min"></p>
+                    <p class="weather__max"></p>
+                </div>
+            </div>
+         </div>
+
+         <!-- weather extra data -->
+
+         <div class="weather__info">
+            <div class="weather__card">
+                <i class="fa-solid fa-droplet"></i>
+            </div>
+            <div>
+                <p>Feels Like</p>
+                <p class="weather__feelsLike">15&#176</p>
+            </div>
+         </div>
+
+         <div class="weather__info">
+            <div class="weather__card">
+                <i class="fa-solid fa-droplet"></i>
+            </div>
+            <div>
+                <p>Humidity</p>
+                <p class="weather__humidity">15&#176</p>
+            </div>
+         </div>
+
+         <div class="weather__info">
+            <div class="weather__card">
+                <i class="fa-solid fa-wind"></i>
+            </div>
+            <div>
+                <p>Wind</p>
+                <p class="weather__wind">15&#176</p>
+            </div>
+         </div>
+
+         <div class="weather__info">
+            <div class="weather__card">
+                <i class="fa-solid fa-gauge-high"></i>
+            </div>
+            <div>
+                <p>Pressure</p>
+                <p class="weather__pressure">15&#176</p>
+            </div>
+         </div>
+    </section>
+</body>
+<script>
+    let cityName = document.querySelector(".weather__city");
+    let dateTime = document.querySelector(".weather__date_time");
+    let w_forecast = document.querySelector(".weather__forecast");
+    let w_temp = document.querySelector(".weather__temp");
+    let w_icon = document.querySelector(".weather__icon");
+    let w_min = document.querySelector(".weather__min");
+    let w_max = document.querySelector(".weather__max");
+    let w_feel = document.querySelector(".weather__feelsLike");
+    let w_humid = document.querySelector(".weather__humidity");
+    let w_wind = document.querySelector(".weather__wind");
+    let w_press = document.querySelector(".weather__pressure");
+
+    let getDateTime = (dt) =>{
+        let curDate = new Date(dt * 1000);
+        console.log(curDate);
+
+        let option = {
+            weekday : "long",
+            year : "numeric",
+            month: "long",
+            day :"numeric",
+            hour: "numeric",
+            minute: "numeric"
+        };
+        let formatter = new Intl.DateTimeFormat("en-US", option);
+        let formattedDate = formatter.format(curDate);
+        return formattedDate;
+    }
+
+   let getWeatherData = async() =>{
+    let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=f169553fbd396533b58fcd60eefb68eb`;
+    try {
+        let res = await fetch(weatherUrl)
+        let data = await res.json();
+        console.log(data);
+        let { main, name, weather, wind, sys, dt } = data;  
+        cityName.innerHTML = `${name}, ${sys.country}`;
+        dateTime.innerHTML = getDateTime(dt);
+        w_min.innerHTML = `Min: ${main.temp_min}&#176`
+        w_max.innerHTML = `Max: ${main.temp_max}&#176`
+        w_temp.innerHTML = `${main.temp}&#176`;
+        w_press.innerHTML = `${main.pressure} hPa`;
+        w_wind.innerHTML = `${wind.speed}m/s`;
+        w_humid.innerHTML = `${main.humidity} %`;
+        w_feel.innerHTML = `${main.feels_like} &#176 `;
+        w_forecast.innerHTML = weather[0].main;
+        w_icon.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather[0].icon}@4x.png"/>`
+        
+    }catch(err){
+        console.log(err);
+    }
+   }
+    document.body.addEventListener("load", getWeatherData());
+
+    // f169553fbd396533b58fcd60eefb68eb
+</script>
+</html>
